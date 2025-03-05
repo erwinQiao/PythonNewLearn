@@ -8,3 +8,17 @@ Day01 主要是学习Python简介，python windows/mac/linux等安装和补充�
 - ABC语言的全称是 "A Programming Language for Children"，即“儿童编程语言”。
 - Python来源是Monty Python's Flying Circus
 - 20008年 python3发布；2011年pip发布；
+
+## 2. Python的基础结构
+Day2 主要是保留字、标识符和字符串的操作
+- 输入和输出
+- 变量及其命名
+- 数据类型
+- 字符串的操作方式
+
+Day03 数值和常量
+- 整数
+- 浮点数
+- 常量
+
+Day04 列表
