@@ -22,7 +22,7 @@ print(id(number))
 
 # 基本数据类型
 ## 数值类型
-#print(01032) 
+print(0x1032) 
 
 # 字符串的常用操作
 ## 拼接字符串
@@ -71,13 +71,47 @@ nostarch_url = 'https://www.nostarch.com'
 print(nostarch_url.removeprefix('https://'))
 
 ## test
-name = input("Please input your name:")
-print(f"hell,{name}, would you like to learn some Python today?")
-print(name.upper())
-print(name.title())
-print(name.lower())
+# name = input("Please input your name:")
+# print(f"hell,{name}, would you like to learn some Python today?")
+# print(name.upper())
+# print(name.title())
+# print(name.lower())
 
 text_name = 'python_notes.txt'
 print(text_name.removesuffix('.txt'))
 
+## 分割字符串
+str = "你 有 多 自   信, \n世界 就 有 多 相信你～"
+print(str.split())
+print(str.split(sep = " "))
+print(str.split(" ",maxsplit=5))
 
+str1 = "@明日科技 @扎克伯格 @乔 @erwin"
+list1 = str1.split()
+print(list1)
+for item in list1:
+    print(item[1:])
+    print(type(item))
+
+## 合并字符串
+list1 = ['明日科技','erwin','Qiao','python']
+item1 = ""
+for item in list1:
+    item1 = item + "@"
+print(item1)
+print("@".join(list1))
+
+## 检索字符串
+str1 = "@qiao @erwin @zhang"
+print('字符串',str,'字符串中@个数',str1.count('@',2,10))
+print(str1.find('@',2))
+
+print(str1.index('@',2))
+print(str1.startswith('*'))
+
+## 删除字符串中的特殊字符
+str1 = " @ https://www.minger.com \t\n\r"
+print(str1)
+print(str1.strip(' @'))
+
+# 高级字符串内置函数
