@@ -115,3 +115,46 @@ print(str1)
 print(str1.strip(' @'))
 
 # 高级字符串内置函数
+## eval函数
+print(eval('3+4'))
+n =2
+print(eval("n+2"))
+# str = input("Please input a expression: ")
+# print(eval(str))
+i = 0
+list1 = []
+while i<10:
+    list1.append(eval("pow (i,3)"))
+    i+=1
+print(list1)
+
+a = "[1,2,3,4]"
+print(a)
+print("转换后的类型",type(eval(a)))
+
+## exec函数
+code="""
+import random
+i = 0
+list1 =[]
+while i <10:
+    list1.append(random.randint(0,100))
+    i+=1
+print(list1)
+"""
+exec(code)
+
+## ascii函数
+print(ascii(67))
+print(ascii('a'))
+print (ascii('中'))
+print(ascii("\b31"))
+
+## complie函数
+code ="""
+for i in range(10):
+    if i %2 ==0:
+        print(i,end="")
+"""
+byteExec = compile(code,'','exec')
+exec(byteExec)
