@@ -23,3 +23,12 @@ if answer !=42:
     print("That is not the correct answer. Please try again!")
 
 ## 检查多个条件
+age_0 = 22
+age_1 = 18
+print(age_0 >=21 and age_1>=21)
+
+banned_users = ['andrew','carolina','david']
+user  = 'marie'
+if user not in banned_users:
+    print(f"{user.title()},you can post a response if you wish")
+
