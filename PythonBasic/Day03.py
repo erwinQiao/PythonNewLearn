@@ -4,6 +4,7 @@ Day3 学习数的相关内容
 2. 浮点数
 3. 常量
 4. Python之禅
+5. 进制数
 """
 
 # *_* coding:utf-8 *_*
@@ -27,3 +28,8 @@ print(f"{facorite_num } is my favorite number!")
 
 # Python之禅
 import this
+
+# 进制数
+print(0b1010)
+print(0o777)
+print(0x1234)

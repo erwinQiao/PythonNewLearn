@@ -144,3 +144,20 @@ print(friend_foods,my_foods)
 
 words = "Three items from the middle of the list are:"
 print(words[-3:])
+
+## 序列相加
+num = [1,2,3,4,5,6]
+nba = ['Janmes','jordan','kobe','wade']
+print(num + nba)
+
+## 乘法
+phone = ['iphone','vivo','huawei']
+print(phone*3)
+print([None]*5)
+
+## 检查某个元素in
+print('iphone' in phone)
+
+## 最大最小值
+print(max(phone))
+print(min(phone))
