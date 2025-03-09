@@ -3,7 +3,7 @@ Day04 主要是列表的使用
 1. 列表
 2. 列表的方法: 添加，删除，排序，长度等
 3. 列表进阶：切片，遍历，列表生成式
-
+4. enumerate()函数
 """
 # 列表
 print(list(range(1,5)))
@@ -161,3 +161,37 @@ print('iphone' in phone)
 ## 最大最小值
 print(max(phone))
 print(min(phone))
+
+## 空列表
+list = []
+print(list)
+
+print(phone)
+del phone
+#print(phone)
+
+## 访问列表
+untitle = ['python',28,'人生苦短',['python',123,4]]
+print(untitle[3][1])
+
+## for循环
+print('2018年俄罗斯世界杯四强：')
+team = ['法国','比利时','英格兰','克罗地亚']
+for index,item in enumerate(team):
+    print(index+1,item)
+
+## 添加元素
+list1 = ['a','b','c']
+print(list1 + ['d'])
+print(list.append('d'))
+
+## enumerta循环和换行
+print('2017~2018赛季NBA东部联盟前八名：')
+team = ['猛龙','凯尔特人','76人','骑士','步行者','热火','雄鹿','奇才']
+for index, item in enumerate(team):
+    if index % 2 ==0:
+        print(item + '\t\t',end='')
+    else:
+        print(item)
+
+## sum
