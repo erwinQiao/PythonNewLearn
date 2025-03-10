@@ -96,3 +96,36 @@ for num in number:
 a,b,c,d = 'xymn'
 print(a,b,c,d)
 print(a)
+
+a,*b = 'spam'
+print(a,b)
+
+x = 12
+y = 20 
+x &= y
+print(x)
+
+a = -1
+if a >=0:
+	if a>0:
+		print('a>0')
+	else:
+		print('a<-1')
+
+## if嵌套
+number = int(input("请输入每100mL酒精含量: "))
+
+if number <20:
+    print("不构成饮酒行为")
+else:
+    if number <= 80:
+        print("yinjiujiache")
+    else:
+        print("zuijiujiache")
+
+## 使用not
+data = None
+if not data:
+    print("data is None")
+else:
+    print("data is not None")
