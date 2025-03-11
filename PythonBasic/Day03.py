@@ -33,3 +33,5 @@ import this
 print(0b1010)
 print(0o777)
 print(0x1234)
+
+## int
