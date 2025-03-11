@@ -1,6 +1,8 @@
 """
 字典
 1. 字典简单应用
+2. 删除键值对
+3. 字典的遍历
 
 """
 
@@ -85,3 +87,24 @@ favoreite_languages = {
 }
 for name, language in favoreite_languages.items():
     print(f"{name.title()} is favorite language is {language.title()}.")
+
+## 遍历字典所有键
+favorite_languages = {
+    'jen':'python',
+    'sarah':'c',
+    'edward':'rust',
+    'phil':'python',
+}
+for key in favorite_languages.keys():
+    print(key.title())
+
+friends= ['phil','sarah']
+for name in favorite_languages.keys():
+    print(f"Hi {name.title()}")
+
+    if name in friends:
+        language = favorite_languages[name].title()
+        print(f"\t{name.title()},I see you love {language}!")
+## 按顺序遍历字典中的所有键
+for name in sorted(favorite_languages.keys()):
+    print(f"{name.title()},thank you for taking the poll")
