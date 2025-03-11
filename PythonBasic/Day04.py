@@ -194,4 +194,4 @@ for index, item in enumerate(team):
     else:
         print(item)
 
-## sum
+## list
