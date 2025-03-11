@@ -38,3 +38,5 @@ team = ("Lakers","Sun","Rockets")
 team1 = ("Cavaliers","Warriors")
 team2 = team + team1
 print(team2)
+
+## tuple
