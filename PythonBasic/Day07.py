@@ -3,7 +3,10 @@
 1. 字典简单应用
 2. 删除键值对
 3. 字典的遍历
-
+4. 字典推导式
+5. 集合创建
+6. 集合的增删
+7. 集合的交并或
 """
 
 # 字典的定义
@@ -193,3 +196,37 @@ print(tuple)
 ## 空值的字典
 dic2 = dict.fromkeys(name)
 print(dic2)
+
+del dic2
+
+## clear字典
+dictionary.clear()
+
+## 字典推导式
+import random
+randomdict = {i:random.randint(10,100) for i in range(1,5)}
+print("生成字典为: ",randomdict)
+
+# 集合
+set1 = {'a','b','c'}
+set2 = {1,2,3,4}
+#set3 = {'a',['a','b'],(),{}}
+
+## set
+set1 = set("命运给予我们的不是失望之酒，是希望之辈")
+set2 = set([1,2,3,4,5])
+set3 = set(("人生苦难，我用python"))
+print(set1)
+print(set2)
+print(set3)
+
+## set.add()
+mr = set(['零基础学java','a','java'])
+mr.add('python')
+print(mr)
+
+## set.remove()
+mr.remove('java')
+mr.pop()
+mr.clear()
+del mr
