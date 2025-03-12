@@ -1,0 +1,70 @@
+"""
+用户输入和while循环
+1. input使用
+2. 求模运算
+
+
+"""
+# 求模运算
+print(4%3)
+print(5%3)
+print(7%3)
+
+# while循环
+current_numer = 1
+while current_numer <=5:
+    print(current_numer)
+    current_numer += 1
+
+## 退出值设定
+prompt = "\nTell me something, and I will repeat it back to you: "
+prompt += "\nEnter 'quit' to end the program. "
+message = ""
+while message!= 'quit':
+    message = input(prompt)
+    print(message)
+
+## 使用标志 flag
+prompt = "\nTell me something, and I will repeat it back to you: "
+prompt+="\n Enter 'quit' to end the program."
+
+active = True
+while active:
+    message = input(prompt)
+
+    if message == 'quit':
+        active = False
+    else:
+        print(message)
+
+## 使用break退出循环
+prompt = "\nPlease enter the name of a city you have visited: "
+prompt += "\n(Enter 'quit' when you are finished)"
+
+while True:
+    city = input(prompt)
+    if city == 'quit':
+        break
+    else:
+        print(f"I'd love to go to {city.title()}!")
+
+## 在循环中使用continue
+current_numer = 0
+while current_numer < 10:
+    current_numer += 1
+    if current_numer % 2 ==0:
+        continue
+    print(current_numer)
+
+# while在列表中循环
+unconfirmed_users = ['alice','brain','candace']
+confirmed_users = []
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop()
+    print(f"Verifying user:{current_user.title()}")
+    confirmed_users.append(current_user)
+
+print("\nThe following users have been confirmed:")
+for confirmed_user in confirmed_users:
+    print(confirmed_user.title())
+
