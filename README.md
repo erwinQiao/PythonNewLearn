@@ -51,3 +51,9 @@ Day07 字典
 - 字典get()
 - 遍历字典
 - 字典的嵌套与列表
+
+Day08 input和while循环
+- input()
+- while循环
+- while循环的break和continue
+- 字典和列表的while循环
