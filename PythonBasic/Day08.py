@@ -98,3 +98,32 @@ while polling_active:
 print("\n----Ploo Results----")
 for name, response in responses.item():
 	print(f"{name} you like to climb {response}")
+
+## for 循环
+for i in range(1,10):
+    result +=i
+print(result)
+
+for i in range(1,10,2):
+    print(i, end= ' ')
+
+## while循环
+print("jinbuzhdao")
+number = 0      
+none =True
+while none:
+	number += 1
+	if number %2 ==0 and number %5 ==3 and number %7 ==2:
+		print("dadui l ")
+		none = False
+
+## 嵌套循环
+for i in range(1,10):
+    for j in range(1,10):
+        print(f"{i}*{j}={i*j}")
+
+while True:
+    for i in range(1,10):
+        for j in range(1,10):
+            print(f"{i}*{j}={i*j}")
+            break
