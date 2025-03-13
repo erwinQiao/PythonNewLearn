@@ -2,7 +2,9 @@
 用户输入和while循环
 1. input使用
 2. 求模运算
-
+3. while循环
+4. break and continue
+5. while在列表字典中循环
 
 """
 # 求模运算
@@ -68,3 +70,31 @@ print("\nThe following users have been confirmed:")
 for confirmed_user in confirmed_users:
     print(confirmed_user.title())
 
+## 删除特定值的所有元素
+pets = ['dog','cat','dog','goldfish','cat','rabbit','cat']
+while 'cat' in pets:
+    pets.remove('cat')
+print(pets)
+
+for  pet in pets:
+    if pet == 'cat':
+        pets.remove('cat')
+print(pets)
+
+## while字典
+responses = {}
+
+polling_active = True
+while polling_active:
+	name = input('\n Please input your name: ')
+	response = input(" which would you like to climb someday:")
+
+	responses[name] = response
+
+	repeat = input("Would you like to let another respond? (yes)/no")
+	if repeat == 'no':
+		polling_active= False
+
+print("\n----Ploo Results----")
+for name, response in responses.item():
+	print(f"{name} you like to climb {response}")
