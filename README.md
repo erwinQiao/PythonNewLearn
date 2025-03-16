@@ -57,3 +57,9 @@ Day08 input和while循环
 - while循环
 - while循环的break和continue
 - 字典和列表的while循环
+
+Day09 函数
+- 函数的定义
+- 函数的参数，位置参数等
+- 函数的返回值
+- 函数处理字典和列表
