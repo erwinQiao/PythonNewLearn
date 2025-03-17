@@ -139,3 +139,31 @@ def make_pizza(*toppings):
     print(f"Making a pizza with the following toppings: {toppings}")
     for topping in toppings:
         print(f"- {topping}")
+
+## 结合使用位置实参和任意数量的实参
+def make_pizza(size,*toppings):
+    print(f"Making a {size}-inch pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+## 使用任意数量的关键字实参
+def build_profile(first, last, **user_info):
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+user_profile = build_profile('albert', 'einstein', 
+                             location='princeton', field='physics')
+print(user_profile)
+
+import pizza
+pizza.make_pizza(17, 'mushrooms', 'green peppers', 'extra cheese')
+
+from pizza import make_pizza as mp
+mp(17, 'mushrooms', 'green peppers', 'extra cheese')
+
+## 模块as alias
+import pizza as p
+p.make_pizza(17, 'mushrooms', 'green peppers', 'extra cheese')
