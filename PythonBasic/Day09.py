@@ -154,8 +154,7 @@ def build_profile(first, last, **user_info):
     user_info['first_name'] = first
     user_info['last_name'] = last
     return user_info
-user_profile = build_profile('albert', 'einstein', 
-                             location='princeton', field='physics')
+user_profile = build_profile('albert', 'einstein', location='princeton', field='physics')
 print(user_profile)
 
 import pizza
@@ -167,3 +166,123 @@ mp(17, 'mushrooms', 'green peppers', 'extra cheese')
 ## 模块as alias
 import pizza as p
 p.make_pizza(17, 'mushrooms', 'green peppers', 'extra cheese')
+
+# 函数补充
+## 基础if函数
+def fun_bmi (person,height,weight):
+    """功能：根据身高和体重计算BMI指数
+    person:姓名
+    height:身高，单位：米
+    weight:体重，单位：千克
+    """
+    print(person + "的身高:" +str(height) + "米 \t 体重："
+          + str(weight) + "千克")
+    # 用于计算BMI指数
+    bmi = weight / (height * height)
+    print("BMI指数为：" + str(bmi))
+    if bmi < 18.5:
+        print("体重过轻")
+    if 18.5 <= bmi < 24.9:  # 18.5 <= bmi < 24.9
+        print("正常范围，注意保持")
+    if 24.9 <= bmi < 29.9:
+        print("体重过重")
+    if bmi >= 29.9:
+        print("肥胖")
+
+fun_bmi("小明",1.75,70)
+
+x = []
+y = [[1,2,3],[4,5,6],[7,8,9]]
+x.append([row[i] for row in y 
+         for i in range(3)])
+print(x)
+
+## pass语句
+def func():
+    pass
+
+## 参数传递 值传递
+def modify (x):
+    print("函数内部修改前：",x)
+    x +=10
+    print("函数内部修改后：",x)
+
+a = 5
+modify(a)
+print("函数外部修改后：",a)
+print(modify(a))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+
+## 引用传递
+def modifty(list):
+    print("函数内部修改前：",list)
+    list.append(10)
+    print("函数内部修改后：",list)
+
+a = [1,2,3]
+modifty(a)
+print("函数外部修改后：",a)
+
+## 参数默认值
+def demo(obj = []):
+    print("obj的值:",obj)
+    obj.append(1)
+    return obj
+
+print(demo())
+print(demo())
+print(demo())
+
+## 可变参数
+def printplayer(*name):
+    print("\n My favorite player is:")
+    for item in name:
+        print(item)
+
+param = ['james','harden','curry']
+printplayer(*param)
+
+def printsign(**sign):
+    print()
+    for key,value in sign.items():
+        print(key + " : " + value)
+
+## 返回值
+def fun_checkout(name):
+    nickName = ""
+    if name == "james":
+        nickName = "king"
+    elif name == "harden":
+        nickName = "brother"
+    else:
+        nickName = "unknown"
+    return nickName
+
+print(fun_checkout("james"))
+
+## 局部变量
+def f_demo():
+    message = "anvc"
+    print('局部变量：',message)
+
+f_demo()
+print(f_demo())
+# print('全局变量：',message)
+
+## 全局变量
+message = "anvc"
+print("函数外 message= ",message)
+def f_demo():
+    message = 'sfadf'
+    print("函数内 message= ",message)
+f_demo()
+print("函数外 message= ",message)
+
+message ="anvc"
+print("函数外 message= ",message)
+def f_demo():
+    global message
+    message = 'sfadf'
+    print("函数内 message= ",message)
+
+f_demo()
+print("函数外 message= ",message)
