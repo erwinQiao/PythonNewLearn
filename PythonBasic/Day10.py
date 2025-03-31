@@ -191,3 +191,5 @@ class ElectriCar(Car):
 		"""电动汽车的独特之处"""
 		super().__init__(make, model, year)
 		self.battery = Battery()
+
+# 导入类
