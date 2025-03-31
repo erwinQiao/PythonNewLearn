@@ -29,6 +29,7 @@ print(f"My dog age is {my_dog.age}")
 ## 调用方法
 my_dog.sit()
 my_dog.roll_over()
+print(Dog.__dict__)
 
 class Restaurant:
 	def __init__(self, restaurant_name, cuisine_type):
@@ -42,6 +43,7 @@ class Restaurant:
 	def open_restaurant(self):
 		print(f"The restaurant is open.")
 
+## 使用类和实例
 class Car:
 	"""一次模拟汽车的简单尝试"""
 	def __init__(self,make,model,year):
@@ -154,6 +156,7 @@ class ElectriCar(Car):
 my_leaf = ElectriCar('nissan','leaf',2024)
 print(my_leaf.get_descriptive_name())
 
+## 给子类定义属性和方法
 class ElectriCar(Car):
 	"""电动车的独特之处"""
 	def __init__(self, make, model, year):
@@ -171,6 +174,7 @@ my_tesla = ElectriCar('tesla','model s',2024)
 print(my_tesla.get_descriptive_name())
 my_tesla.describe_battery()
 
+## 重写父类的方法
 class ElectriCar(Car):
 	def fill_gas_tank(self):
 		"""电动车没有油箱"""
@@ -191,5 +195,8 @@ class ElectriCar(Car):
 		"""电动汽车的独特之处"""
 		super().__init__(make, model, year)
 		self.battery = Battery()
+my_leaf = ElectriCar('nissan','leaf',2024)
+print(my_leaf.get_descriptive_name())
+my_leaf.battery.describe_battery()
 
 # 导入类
