@@ -71,3 +71,44 @@ c = ['a','b','c','d','e','A','B','*']
 print(sorted(c))
 print(sorted(c,reverse=True))
 print(sorted(c, key=str.lower))
+
+# zip
+num = [1,2,3]
+name = ['mrsoft','python','java']
+print(list(zip(num,name)))
+print(zip(num,name))
+print(list(zip(num,name,range(3))))
+
+for i in zip(num,name):
+    print(i)
+print(dict(zip(num,name)))
+print(zip())
+
+print(list(zip(num)))
+print(list(zip(name)))
+
+n1 = [1,2,3]
+n2 = [4,5,6]
+c = zip(n1,n2)
+print(list(zip(*c)))
+
+# next
+s = iter('dfasfd')
+print(next(s))
+print(next(s),'x')
+
+# filter
+def odd(num):
+    return num % 2 == 0
+
+print(list(filter(odd,[1,2,3,4,5,6,7,8,9])))
+print(filter(odd,[1,2,3,4,5,6,7,8,9]))
+
+# map
+num1 = [25105,29233,20320]
+print(list(map(chr,num1)))
+
+# dir()
+print(dir([]))
+list= [1,2,3]
+print(dir(list))
