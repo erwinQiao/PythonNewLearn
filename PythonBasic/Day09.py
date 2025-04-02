@@ -157,14 +157,14 @@ def build_profile(first, last, **user_info):
 user_profile = build_profile('albert', 'einstein', location='princeton', field='physics')
 print(user_profile)
 
-import pizza
+import Pythonfile.pizza as pizza
 pizza.make_pizza(17, 'mushrooms', 'green peppers', 'extra cheese')
 
-from pizza import make_pizza as mp
+from Pythonfile.pizza import make_pizza as mp
 mp(17, 'mushrooms', 'green peppers', 'extra cheese')
 
 ## 模块as alias
-import pizza as p
+import Pythonfile.pizza as p
 p.make_pizza(17, 'mushrooms', 'green peppers', 'extra cheese')
 
 # 函数补充
