@@ -3,7 +3,7 @@
 1. 定义函数
 2.函数传递信息，位置参数
 3.函数处理字典、列表
-4.
+4. 装饰器
 """
 # 函数结构
 def greet_user():
@@ -157,15 +157,15 @@ def build_profile(first, last, **user_info):
 user_profile = build_profile('albert', 'einstein', location='princeton', field='physics')
 print(user_profile)
 
-import Pythonfile.pizza as pizza
-pizza.make_pizza(17, 'mushrooms', 'green peppers', 'extra cheese')
+#import Pythonfile.pizza as pizza
+#pizza.make_pizza(17, 'mushrooms', 'green peppers', 'extra cheese')
 
-from Pythonfile.pizza import make_pizza as mp
-mp(17, 'mushrooms', 'green peppers', 'extra cheese')
+#from Pythonfile.pizza import make_pizza as mp
+#mp(17, 'mushrooms', 'green peppers', 'extra cheese')
 
 ## 模块as alias
-import Pythonfile.pizza as p
-p.make_pizza(17, 'mushrooms', 'green peppers', 'extra cheese')
+#import Pythonfile.pizza as p
+#p.make_pizza(17, 'mushrooms', 'green peppers', 'extra cheese')
 
 # 函数补充
 ## 基础if函数
@@ -193,8 +193,7 @@ fun_bmi("小明",1.75,70)
 
 x = []
 y = [[1,2,3],[4,5,6],[7,8,9]]
-x.append([row[i] for row in y 
-         for i in range(3)])
+x.append([row[i] for row in y for i in range(3)])
 print(x)
 
 ## pass语句
@@ -286,3 +285,64 @@ def f_demo():
 
 f_demo()
 print("函数外 message= ",message)
+
+# 装饰器的使用
+## 装饰器的基础
+import time
+
+def record_time(func):
+    """
+    定义一个装饰功能
+    因为不知道被装饰的函数有怎么养的参数，所以使用*args和**kwargs
+    Python中函数可以嵌套的定义
+    """
+    def wrapper(*arg, **kwargs):
+        start = time.time()
+        result = func(*arg, **kwargs)
+        end = time.time()
+        print("函数执行时间：", end - start)
+        return result
+    return wrapper
+
+import random
+@record_time
+def download(filename):
+    print(f'开始下载{filename}.')
+    time.sleep(random.randint(2, 6))
+    print(f'{filename}下载完成.')
+
+download('Python基础教程')
+
+import random
+import time
+from functools import wraps
+
+## warp装饰器
+def record_time(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__}执行时间:{end - start:.2f}秒")
+        return result
+    return wrapper
+
+@record_time
+def download(filename):
+    print(f'开始下载{filename}.')
+    time.sleep(random.randint(2, 6))
+    print(f'{filename}下载完成.')
+download('Python基础教程.pdf')
+
+## 取消装饰器
+download.__wrapped__('Python基础教程.pdf')
+
+# 递归调用
+def fac(num):
+    if num in (0,1):
+        return 1
+    return num * fac(num - 1)
+
+print(fac(500))
