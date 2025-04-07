@@ -199,4 +199,32 @@ my_leaf = ElectriCar('nissan','leaf',2024)
 print(my_leaf.get_descriptive_name())
 my_leaf.battery.describe_battery()
 
-# 导入类
+## 类的定义和使用
+class Geese:
+	"""大雁类"""
+	pass
+
+wildGoose = Geese()
+print(wildGoose)
+
+class Geese:
+	'''大雁类'''
+	def __init__(self):
+		print('大雁类被创建了')
+wildGoose = Geese()
+print(wildGoose)
+
+## init参数
+class Geese:
+	'''大雁类'''
+	def __init__(self, beak, wing, claw):
+		print('大雁类被创建了')
+		print(beak)
+		print(wing)
+		print(claw)
+beak1 = '长'
+wing1 = '大'
+claw1 = '强健'
+wildGoose = Geese(beak1,wing1,claw1)
+print(wildGoose)
+
