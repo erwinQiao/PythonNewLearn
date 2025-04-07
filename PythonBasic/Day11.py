@@ -1,6 +1,9 @@
 """
 Python built-in functions  
 Python标准内置函数使用
+- 标准函数
+- 迭代器函数
+- 运算函数
 """
 
 # help
