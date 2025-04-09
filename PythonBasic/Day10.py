@@ -228,3 +228,68 @@ claw1 = '强健'
 wildGoose = Geese(beak1,wing1,claw1)
 print(wildGoose)
 
+## 创建数据成员访问
+class Geese:
+	"""大雁类"""
+	neck = "长颈"
+	wing = "大翅膀"
+	leg = "长腿"
+	def __init__(self):
+		print('大雁类被创建了')
+		print(Geese.neck)
+		print(Geese.wing)
+		print(Geese.leg)
+wildGoose = Geese()
+
+## 创建数据成员并访问
+class Geese:
+	'''雁类'''
+	def __init__(self):
+		self.beak = '长'
+		self.wing = '大'
+		self.claw = '强健'
+		print('大雁类被创建了')
+		print(self.beak)
+		print(self.wing)
+		print(self.claw)
+wildGoose = Geese()
+
+# 访问限制
+## 单下画线
+class Swan:
+	'''天鹅类'''
+	_neck_swan = '长颈'
+	def __init__(self):
+		print("__init__():",Swan._neck_swan)
+swan = Swan()
+print("直接访问:", swan._neck_swan)
+
+## 双下画线
+class Swan:
+	'''天鹅类'''
+	__neck_swan = '长颈'
+	def __init__(self):
+		print("__init__():", Swan.__neck_swan)
+swan = Swan()
+print("直接访问:", swan._Swan__neck_swan)
+
+## 装饰器
+class Rect:
+	def __init__(self, width, height):
+		self.width = width
+		self.height = height
+	@property
+	def aera(self):
+		return self.width * self.height
+	
+rect = Rect(3,4)
+print(rect.aera)
+
+class TVshow:
+	def __init__(self,show):
+		self.__show = show
+	@property
+	def show(self):
+		return self.__show
+tvshow = TVshow('Friends')
+print(tvshow.show)
