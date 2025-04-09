@@ -4,6 +4,11 @@ Python标准内置函数使用
 - 标准函数
 - 迭代器函数
 - 运算函数
+
+Python中模块
+- 模块
+- 自定义模块
+- 引用其它模块
 """
 
 # help
@@ -115,3 +120,7 @@ print(list(map(chr,num1)))
 print(dir([]))
 list= [1,2,3]
 print(dir(list))
+
+# 模块
+import sys
+print(sys.path)
