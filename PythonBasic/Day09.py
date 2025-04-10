@@ -346,3 +346,101 @@ def fac(num):
     return num * fac(num - 1)
 
 print(fac(500))
+
+# 装饰器
+import random
+import time
+
+from functools import wraps
+
+def record_time(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__}执行时间:{end - start:.2f}秒")
+        return result
+    return wrapper
+@record_time
+def downliad(filename):
+    print(f'开始下载{filename}.')
+    time.sleep(random.randint(2, 6))
+    print(f'{filename}下载完成.')
+@record_time
+def  upload(filename):
+    print(f'开始上传{filename}.')
+    time.sleep(random.randint(2, 6))
+    print(f'{filename}上传完成.')
+
+downliad('Python基础教程.pdf')
+upload('Python基础教程.pdf')
+
+## 取消装饰器
+download.__wrapped__('Python基础教程.pdf')
+
+## 打印对象
+class Student:
+    """学生"""
+
+    def __init__(self, name, age):
+        """初始化方法"""
+        self.name = name
+        self.age = age
+    
+    def study(self, course_name):
+        """学习"""
+        print(f'{self.name}正在学习{course_name}')
+    
+    def play(self):
+        """玩"""
+        print(f'{self.name}正在玩')
+    def __repr__(self):
+        return f'{self.name}:{self.age}'
+
+stu1 = Student('小明', 20)
+print(stu1)
+
+# 定义时钟
+import time
+class Clock(object):
+    """数字时钟"""
+    def __init__(self, hour = 0, minute = 0, sec = 0):
+        self.hour = hour
+        self.minute = minute
+        self.sec = sec
+
+    def run(self):
+        """ 走字"""
+        self.sec += 1
+        if self.sec == 60:
+            self.sec = 0
+            self.minute += 1
+            if self.minute == 60:
+                self.minute = 0
+                self.hour +=1
+                if self.hour == 24:
+                    self.hour = 0
+    def show(self):
+        """显示时间"""
+        print(f"{self.hour:0>2d}:{self.minute:0>2d}:{self.sec:0>2d}")
+clock = Clock(23, 59, 58)
+while True:
+    print(clock.show())
+    time.sleep(1)
+    clock.run()
+
+## 属性限制
+class Student:
+    __slots__ = ('name', 'age')
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+stu = Student('王大锤', 20)
+# AttributeError: 'Student' object has no attribute 'sex'
+stu.sex = '男'
+
