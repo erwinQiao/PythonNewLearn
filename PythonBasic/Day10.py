@@ -293,3 +293,67 @@ class TVshow:
 		return self.__show
 tvshow = TVshow('Friends')
 print(tvshow.show)
+
+class Triangle(object):
+	"""三角形类"""
+	def __init__(self, a, b, c):
+		self.__a = a
+		self.__b = b
+		self.__c = c
+
+	@staticmethod
+	def is_valid(a,b,c):
+		return a + b > c and a + c > b and b + c > a
+	
+	@classmethod
+	def is_valid(cls, a, b, c):
+		return a + b > c and a + c > b and b + c > a
+
+# 扑克游戏
+from enum import Enum
+
+class Suite(Enum):
+	"""花色(枚举)"""
+	Spade,Heart,Club,Diamond = range(4)
+
+class Card:
+	"""牌"""
+	def __init__(self, suite, face):
+		self.suite = suite
+		self.face = face
+	
+	def __repr__(self):
+		suites = '♠♥♣♦'
+		faces = ['','A','2','3','4','5','6','7','8','9','10','J','Q','K']
+		return f'{suites[self.suite.value]}{faces[self.face]}'
+	
+
+import random
+class Poker:
+	"""扑克(一副牌)"""
+	def __init__(self):
+		self.cards = [Card(suite, face) for suite in Suite for face in range(1, 14)]
+		self.current_index = 0
+
+	def shuffle(self):
+		self.current_index = 0
+		random.shuffle(self.cards)
+
+	def deal(self):
+		card = self.cards[self.current_index]
+		self.current_index += 1
+		return card
+	@property
+	def has_next(self):
+		return self.current_index < len(self.cards)
+class Player:
+
+	def __init__(self,name):
+		self.name = name
+		self.cards = []
+	
+	def get_one(self,card):
+		self.cards.append(card)
+	
+	def arrange(self):
+		self.card.sort()
