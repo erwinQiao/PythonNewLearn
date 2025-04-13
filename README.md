@@ -53,7 +53,7 @@ Day07 字典
 - 字典的嵌套与列表
 
 Day08 input和while循环
-- input()
+- input() 输入
 - while循环
 - while循环的break和continue
 - 字典和列表的while循环
@@ -68,10 +68,10 @@ Day09 函数
 
 Day10 类
 - 类的定义
-- 类
 - 类的属性和方法
 - 类的继承
 - 类的多态
+- 类的装饰器
 
 Day11 内置函数
 - 基本常用函数
@@ -80,3 +80,19 @@ Day11 内置函数
 - 对象创建函数
 - 迭代器操作函数
 - 对象操作函数
+
+Day12 Python标准库和文件异常
+- Python标准库
+- base64 - Base64编解码模块
+- collections - 容器数据类型模块
+- heapq - 堆排序模块
+- itertools - 迭代工具模块
+- random - 随机数和随机抽样模块
+- OS模块
+- uuid - UUID生成模块
+
+Day13 文件读写和异常处理
+- 文件读写
+- 异常处理机制
+
+
