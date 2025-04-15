@@ -94,5 +94,8 @@ Day12 Python标准库和文件异常
 Day13 文件读写和异常处理
 - 文件读写
 - 异常处理机制
-
+- I/O
+- try/try-except-finally
+- assert
+- raise
 

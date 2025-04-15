@@ -83,3 +83,39 @@ try:
         file2.write(data)
 except FileNotFoundError:
     print('无法打开指定的文件！')
+
+# 基本文件操作
+import os
+print(os.name)
+print(os.linesep)
+print(os.sep)
+print(os.getcwd())
+
+## 绝对路径
+print(os.path.abspath('test.txt'))
+
+## 遍历目录
+tuples = os.walk('/Users/qiaowu/Desktop/PythonNewLearn/')
+for tuple in tuples:
+    print(tuple,"\n")
+
+## 删除目录文件
+# import os
+# path = ""
+# if os.exit(path):
+#     os.remove(path)
+# else:
+#     print("文件不存在")
+
+## 文件基本信息
+import os
+print(os.stat('ReadMe.md'))
+
+# 异常处理及程序调试
+# def division():
+#     num1 = int(input("请输入第一个数字："))
+#     num2 = int(input("请输入第二个数字："))
+#     result = num1 / num2
+#     print("结果是：", result)
+# if __name__ == "__main__":
+#     division()
