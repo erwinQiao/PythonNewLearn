@@ -1,2 +1,13 @@
+"""
+Day14 Python处理office文件
+- csv
+- word
+- excel
+- ppt
+- pdf
+"""
+
 import sys
-print(sys.path)
+import os
+#print(sys.path)
+print(os.getcwd())
